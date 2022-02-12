@@ -1,0 +1,96 @@
+#PATH EXPORTS
+
+set -m
+
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin/chromedriver:$PATH"
+export PATH="/usr/local/go/bin/go:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="~/.npm-global/bin:$PATH"
+export PATH="~/.npm-global/bin/wikit:$PATH"
+export PATH="/Users/sidbaskaran/chromedriver:$PATH"
+export PATH="/usr/local/share/pstoedit:$PATH"
+export PATH="/usr/local/octave/6.2.0/bin:$PATH"
+export PATH="/usr/local/bin/jupyter:$PATH"
+export PATH="Users/sidbaskaran/.local/bin:$PATH"
+export PATH="/Users/sidbaskaran/Desktop/machine-learning-coursera/notes/convert.py:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="Users/sidbaskaran/Library/Python/3.9/bin:$PATH"
+export PATH="/usr/local/opt/python@3.9/bin/python3.9:$PATH"
+export PATH="~/vcpkg:$PATH"
+
+#custom script location path
+export PATH="/Users/sidbaskaran/Desktop/coding-projects/utility-scripts:$PATH"
+export PATH="/Users/sidbaskaran/Desktop/coding-projects/utility-scripts/bash-scripts:$PATH"
+export PATH="/Users/sidbaskaran/Desktop/coding-projects/python-scripts:$PATH"
+export PATH="/Users/sidbaskaran/Desktop/coding-projects/python-scripts/misc:$PATH"
+export PATH="/Users/sidbaskaran/gtasks:$PATH"
+export PATH="/usr/local/bin/pygmentize:$PATH"
+
+#path for spotify ad kill script
+export SPOTIKILL_PATH=/Users/sidbaskaran/Desktop/coding-projects/utility-scripts/spotify-ad-killer
+export PATH="$SPOTIKILL_PATH:$PATH"
+
+#env variables misc
+export NODE_TLS_REJECT_UNAUTHORIZED=0
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+
+# Competitive Programming config
+alias g++=g++-11
+
+co() { 
+    g++ -std=c++17 -O2 -o "${1%.*}" $1 -Wall -Wl,-stack_size -Wl,0x10000000;
+}
+
+run() {
+    if [ "$2" = "-i" ]
+    then
+        co $1 && ${1%.*} < ${1%.*}.dat & fg; 
+    else
+        co $1 && ${1%.*} & fg; 
+    fi
+}
+
+#GENERAL ALIASES
+alias c-dl='\rm -r ~/downloads/*'
+alias oct='octave-cli'
+alias t='todo.sh'
+
+mkcd() {
+    mkdir $1
+    cd $1
+}
+
+clasprun() {
+    clasp push
+    clasp run $1
+}
+
+lgw() {
+    yabai -m config top_padding    150
+    yabai -m config bottom_padding 150
+    yabai -m config left_padding   150
+    yabai -m config right_padding  150
+}
+
+smw() {
+    yabai -m config top_padding    0
+    yabai -m config bottom_padding 0
+    yabai -m config left_padding   0
+    yabai -m config right_padding  0
+}
+
+#GIT ALIASES
+alias gpl="git pull"
+alias gf="git fetch"
+alias ga="git add"
+alias gp="git push -u origin"
+alias gcm="git commit -m"
+alias gr="git reset --hard HEAD"
+alias gs="git status"
+alias gc="git checkout"
+
+alias gtasks="~/gtasks"
